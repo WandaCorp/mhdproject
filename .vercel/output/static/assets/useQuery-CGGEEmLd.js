@@ -1,0 +1,1 @@
+import{d as e,f as t}from"./api-Bbn1q50v.js";function n(n,r){return e(n,t,r)}export{n as t};

@@ -1,0 +1,186 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --color-bg: #010013;
+  --color-bg-elevated: #0a0a24;
+  --color-bg-subtle: #14143a;
+  --color-fg: #f3f4ff;
+  --color-muted: #9aa0c4;
+  --color-subtle: #6b7194;
+  --color-border: color-mix(in oklab, #f3f4ff 12%, transparent);
+  --color-border-strong: color-mix(in oklab, #f3f4ff 22%, transparent);
+  --color-card: #08081f;
+  --color-ocean: #0077be;
+  --color-ocean-fg: #f5fbff;
+  --color-rank: #0000ff;
+  --color-rank-fg: #ffffff;
+  --color-accent: #ff00ff;
+  --color-accent-fg: #1a001a;
+  --color-primary: #ff00ff;
+  --color-primary-fg: #1a001a;
+  --color-ring: #ff00ff;
+  --color-danger: #ff4d6d;
+  --color-success: #3ee0a0;
+  --color-warn: #f5c14a;
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-poster: 4px;
+
+  --font-display: "Bebas Neue", "Impact", "Arial Narrow", sans-serif;
+  --font-sans: "Manrope", "Segoe UI", system-ui, sans-serif;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: clamp(1.5rem, 1.2rem + 1vw, 2rem);
+  --text-2xl: clamp(2rem, 1.4rem + 2vw, 3rem);
+  --text-3xl: clamp(2.5rem, 1.6rem + 3vw, 4.25rem);
+
+  --poster-w: 8.75rem;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+
+  body {
+    min-height: 100dvh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 40%, transparent);
+    color: var(--color-fg);
+  }
+}
+
+/* Tamaño de pósters controlado por el panel de configuración. */
+html[data-poster-size="pequeno"] {
+  --poster-w: 6.75rem;
+}
+html[data-poster-size="mediano"] {
+  --poster-w: 8.5rem;
+}
+html[data-poster-size="grande"] {
+  --poster-w: 10.5rem;
+}
+
+@media (min-width: 768px) {
+  html[data-poster-size="pequeno"] {
+    --poster-w: 7.75rem;
+  }
+  html[data-poster-size="mediano"] {
+    --poster-w: 10rem;
+  }
+  html[data-poster-size="grande"] {
+    --poster-w: 12.5rem;
+  }
+}
+
+.poster-w {
+  width: var(--poster-w);
+}
+
+/* Overlay del slider hero para legibilidad del texto. */
+.hero-overlay {
+  background:
+    linear-gradient(
+      to top,
+      var(--color-bg) 0%,
+      color-mix(in oklab, var(--color-bg) 55%, transparent) 38%,
+      transparent 62%
+    ),
+    linear-gradient(
+      to right,
+      color-mix(in oklab, var(--color-bg) 72%, transparent) 0%,
+      transparent 46%
+    );
+}
+
+/* Carruseles horizontales del feed. */
+.feed-scroll {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding-bottom: 0.25rem;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+}
+.feed-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-subtle) 0%,
+    color-mix(in oklab, var(--color-fg) 8%, var(--color-bg-subtle)) 50%,
+    var(--color-bg-subtle) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: -100% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer {
+    animation: none;
+  }
+  .hero-slide {
+    transition: none !important;
+  }
+}

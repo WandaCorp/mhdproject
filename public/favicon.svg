@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="6" fill="#010013"/>
+  <rect x="3" y="6" width="26" height="20" rx="2" fill="#0000FF"/>
+  <rect x="6" y="9" width="20" height="14" fill="#010013"/>
+  <text x="16" y="20" text-anchor="middle" font-family="Arial Black, sans-serif" font-size="10" fill="#FF00FF">SUR</text>
+</svg>

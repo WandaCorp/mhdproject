@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "SUR DB",
+      "hasCanvas": false,
+      "bodyTextLen": 663,
+      "bodyTextHash": "f084b1da8d6d13f7004a0e8e70e276ebcf862d047d9d6997c8a3948e4aca4936",
+      "bodyTextPrefix": "SUR DB Episodios Series que emiten capítulo hoy VER TODO Estreno",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "SUR DB",
+      "hasCanvas": false,
+      "bodyTextLen": 687,
+      "bodyTextHash": "1cc6b427af18c6a22577e568d4027fe0bd244b871cb2fb6dc9576fcd28407fdd",
+      "bodyTextPrefix": "SUR DB Episodios Series que emiten capítulo hoy VER TODO Estreno",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}
